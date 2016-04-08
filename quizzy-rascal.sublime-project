@@ -1,0 +1,30 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"npm",
+				"test"
+			],
+			"name": "npm test",
+			"windows":
+			{
+				"cmd":
+				[
+					"npm.cmd",
+					"test"
+				]
+			},
+			"working_dir": "$project_path"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true
+}
