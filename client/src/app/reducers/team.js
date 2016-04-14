@@ -5,12 +5,13 @@ import {
   CHANGE_TEAM_NAME 
 } from '../actions'
 
-export default (state={isLoggingIn: false, isLoggedIn: false, name: "World"}, action) => {
+export default (state={isLoggingIn: false, isLoggedIn: false}, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
       return {
         ...state,
-        isLoggingIn: true
+        isLoggingIn: true,
+        name: action.teamName
       }
 
     case LOGIN_SUCCESS:

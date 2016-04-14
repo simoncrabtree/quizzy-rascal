@@ -11,6 +11,7 @@ describe('team', () => {
     const state = reducerReduce(team, [])
     expect(state.isLoggingIn).to.be.false
     expect(state.isLoggedIn).to.be.false
+    expect(state.name).to.be.undefined
   })
 
   describe('user attempts to log in', () => {
@@ -18,22 +19,30 @@ describe('team', () => {
       type: LOGIN_REQUEST
     }])
 
-    it('is logged in', () => {
+    it('will show the Logging In status', () => {
       expect(state.isLoggingIn).to.be.true
     })
   })
 
   describe('user logs in and successful response is received', () => {
     const state = reducerReduce(team, [{
-      type: LOGIN_REQUEST
+      type: LOGIN_REQUEST,
+      teamName: 'Test Team 1'
     }, {
       type: LOGIN_SUCCESS,
       id: 'token-123'
     }])
 
+    it('will no longer show the Logging In status', () => {
+      expect(state.isLoggingIn).to.be.false
+    })
+
     it('is logged in', () => {
       expect(state.isLoggedIn).to.be.true
-      expect(state.isLoggingIn).to.be.false
+    })
+
+    it('has the correct team name', () => {
+      expect(state.name).to.equal('Test Team 1')
     })
   })
 })
