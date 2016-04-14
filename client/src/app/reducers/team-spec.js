@@ -26,11 +26,13 @@ describe('team', () => {
 
   describe('user logs in and successful response is received', () => {
     const state = reducerReduce(team, [{
-      type: LOGIN_REQUEST,
-      teamName: 'Test Team 1'
+      type: LOGIN_REQUEST
     }, {
       type: LOGIN_SUCCESS,
-      id: 'token-123'
+      response: {
+        id: 'token-123',
+        teamName: 'Test Team 1'
+      }
     }])
 
     it('will no longer show the Logging In status', () => {
