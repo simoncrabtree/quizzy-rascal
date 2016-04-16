@@ -4,7 +4,8 @@ import team from './team'
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
-  FETCH_TEAM_REQUEST
+  FETCH_TEAM_REQUEST,
+  FETCH_TEAM_SUCCESS
 } from '../actions'
 
 describe('team', () => {
@@ -60,6 +61,17 @@ describe('team', () => {
 
     it('sets the team.isFetching flag', () => {
       expect(state.isFetching).to.be.true  
+    })
+  })
+
+  describe('fetch team successfully', () => {
+    const state = reducerReduce(team, [{
+      type: FETCH_TEAM_SUCCESS,
+      response: {name: 'My Team Name'}
+    }])
+
+    it('sets the team name', () => {
+      expect(state.name).to.equal('My Team Name')  
     })
   })
 })

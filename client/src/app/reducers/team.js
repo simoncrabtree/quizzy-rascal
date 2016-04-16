@@ -3,7 +3,8 @@ import {
   LOGIN_SUCCESS, 
   LOGIN_FAILURE,
   CHANGE_TEAM_NAME ,
-  FETCH_TEAM_REQUEST
+  FETCH_TEAM_REQUEST,
+  FETCH_TEAM_SUCCESS
 } from '../actions'
 
 export default (state={isLoggingIn: false, isLoggedIn: false}, action) => {
@@ -39,6 +40,12 @@ export default (state={isLoggingIn: false, isLoggedIn: false}, action) => {
       return {
         ...state,
         isFetching: true
+      }
+
+    case FETCH_TEAM_SUCCESS:
+      return {
+        ...state,
+        name: action.response.name
       }
 
     default:
