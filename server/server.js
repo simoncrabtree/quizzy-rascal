@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var Inert = require('inert')
 var config = require('./package.json');
 var port = process.env.port || 1337;
 var uuid = require('node-uuid');
@@ -6,6 +7,8 @@ var uuid = require('node-uuid');
 var teams = {}
 
 var server = new Hapi.Server();
+server.register(Inert, () => {});
+
 server.connection({
 	port: port
 });
