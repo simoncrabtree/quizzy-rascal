@@ -457,6 +457,9 @@
 			]
 		]
 	},
+	"buffers":
+	[
+	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -464,7 +467,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 357.0,
+		"height": 47.0,
 		"last_filter": ":w",
 		"selected_items":
 		[
@@ -521,13 +524,14 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 416.0
+		"width": 467.0
 	},
 	"console":
 	{
 		"height": 174.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
 			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
@@ -540,8 +544,17 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/simoncrabtree/quizzy-rascal",
+		"/Users/simoncrabtree/quizzy-rascal/client",
+		"/Users/simoncrabtree/quizzy-rascal/client/src",
+		"/Users/simoncrabtree/quizzy-rascal/client/src/app",
+		"/Users/simoncrabtree/quizzy-rascal/client/src/app/reducers"
+	],
 	"file_history":
 	[
+		"/Users/simoncrabtree/quizzy-rascal/client/src/app/reducers/team-spec.js",
 		"/C/repos/quizzy-rascal/client/src/app/MainPage.js",
 		"/C/repos/quizzy-rascal/client/src/app/actions.js",
 		"/C/repos/quizzy-rascal/client/src/app/middleware/api.js",
@@ -668,12 +681,11 @@
 		"/C/repos/laserform-hub-fake-gateways/landRegistry/EDocumentRegistrationV2_0PollRequestWebService_earlycompletion.js",
 		"/C/repos/laserform-hub-fake-gateways/landRegistry/eDocumentRegistrationV2_0WebService_rejected.js",
 		"/C/repos/laserform-hub-fake-gateways/server.js",
-		"/C/repos/laserform-hub-fake-gateways/landRegistry/earlyCompletionV2_0PollRequestWebService.js",
-		"/C/Users/simon.crabtree/.floorc.json"
+		"/C/repos/laserform-hub-fake-gateways/landRegistry/earlyCompletionV2_0PollRequestWebService.js"
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -848,9 +860,17 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
 	"incremental_find":
 	{
-		"height": 35.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -884,9 +904,10 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
+	"project": "quizzy-rascal.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1252,6 +1273,7 @@
 		],
 		"width": 0.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},

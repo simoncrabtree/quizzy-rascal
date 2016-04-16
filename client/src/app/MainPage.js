@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import mapStateToProps from './selectors/mainPage'
-import { login, changeTeamName } from './actions'
+import { login, changeTeamName, fetchTeam } from './actions'
 
 const MainPage = React.createClass({
+  componentWillMount: function() {
+    this.props.dispatch(fetchTeam())
+  },
+
   teamNameChanged: function(e) {
     this.props.dispatch(changeTeamName(e.target.value))
   },
@@ -13,7 +17,7 @@ const MainPage = React.createClass({
   },
 
   render: function () {
-    if(!this.props.isLoggedIn)
+    if(!this.props.token)
       return (
         <div className='form'>
           <div className='form-group'>

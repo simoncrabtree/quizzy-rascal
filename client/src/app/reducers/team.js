@@ -2,7 +2,8 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS, 
   LOGIN_FAILURE,
-  CHANGE_TEAM_NAME 
+  CHANGE_TEAM_NAME ,
+  FETCH_TEAM_REQUEST
 } from '../actions'
 
 export default (state={isLoggingIn: false, isLoggedIn: false}, action) => {
@@ -32,6 +33,12 @@ export default (state={isLoggingIn: false, isLoggedIn: false}, action) => {
       return {
         ...state,
         name: action.teamName
+      }
+
+    case FETCH_TEAM_REQUEST:
+      return {
+        ...state,
+        isFetching: true
       }
 
     default:

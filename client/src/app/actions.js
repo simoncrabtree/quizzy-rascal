@@ -6,6 +6,9 @@ export const LOGIN_REQUEST = 'LOGIN_REQUEST'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
 export const CHANGE_TEAM_NAME = 'CHANGE_TEAM_NAME'
+export const FETCH_TEAM_REQUEST = 'FETCH_TEAM_REQUEST'
+export const FETCH_TEAM_SUCCESS = 'FETCH_TEAM_SUCCESS'
+export const FETCH_TEAM_FAILURE = 'FETCH_TEAM_FAILURE'
 
 export const appInit = () => ({
   type: APP_INIT
@@ -27,3 +30,18 @@ export const changeTeamName = (teamName) => ({
   type: CHANGE_TEAM_NAME,
   teamName
 })
+
+export const fetchTeam = () => ({
+  type: API_CALL,
+  endpoint: '/team',
+  method: 'GET',
+  onRequest: FETCH_TEAM_REQUEST,
+  onSuccess: FETCH_TEAM_SUCCESS,
+  onFailure: FETCH_TEAM_FAILURE
+})
+
+export const fetchTeamIfNecessary = () => (dispatch, getState) => {
+  const teamFromState = getState().team
+  if(teamFromState.token && !teamFromState.name)
+    return dispatch(fetchTeam())
+}

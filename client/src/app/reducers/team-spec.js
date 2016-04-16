@@ -3,7 +3,8 @@ import { reducerReduce } from '../specHelper'
 import team from './team'
 import {
   LOGIN_REQUEST,
-  LOGIN_SUCCESS
+  LOGIN_SUCCESS,
+  FETCH_TEAM_REQUEST
 } from '../actions'
 
 describe('team', () => {
@@ -45,6 +46,20 @@ describe('team', () => {
 
     it('has the correct team name', () => {
       expect(state.name).to.equal('Test Team 1')
+    })
+
+    it('has the token from the server', () => {
+      expect(state.token).to.equal('token-123')
+    })
+  })
+
+  describe('fetch team requested', () => {
+    const state = reducerReduce(team, [{
+      type: FETCH_TEAM_REQUEST
+    }])
+
+    it('sets the team.isFetching flag', () => {
+      expect(state.isFetching).to.be.true  
     })
   })
 })
