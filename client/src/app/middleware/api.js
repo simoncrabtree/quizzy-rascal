@@ -1,9 +1,10 @@
 import 'isomorphic-fetch'
 
-const headers = () => {
+const headers = (store) => {
   return {
     'Accept':        'application/json',
-    'Content-Type':  'application/json'
+    'Content-Type':  'application/json',
+    'TeamToken': store.getState().team.token
   }
 }
 

@@ -63,7 +63,7 @@ server.route({
   method: 'GET',
   path: '/team',
   handler: function(request, reply) {
-    reply(teams[0])
+    reply(teams[request.headers.teamtoken])
   }
 });
 
