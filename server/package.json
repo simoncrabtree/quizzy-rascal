@@ -12,10 +12,11 @@
     "url": "https://github.com/AdvancedLegal/LaserformHubAdmin/issues"
   },
   "homepage": "https://github.com/AdvancedLegal/LaserformHubAdmin",
-  "engines":{
+  "engines": {
     "node": "4.2.3"
   },
   "dependencies": {
-    "hapi": "^8.8.1"
+    "hapi": "^8.8.1",
+    "node-uuid": "^1.4.7"
   }
 }

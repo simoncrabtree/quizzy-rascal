@@ -17,7 +17,7 @@ export default (state={isLoggingIn: false, isLoggedIn: false}, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        token: action.response.id,
+        token: action.response.token,
         name: action.response.teamName,
         isLoggedIn: true,
         isLoggingIn: false

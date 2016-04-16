@@ -1,6 +1,7 @@
 var Hapi = require('hapi');
 var config = require('./package.json');
 var port = process.env.port || 1337;
+var uuid = require('node-uuid');
 
 var teams = {}
 
@@ -14,12 +15,14 @@ var getInfo = function (request, reply) {
 }
 
 var login = function(request, reply) {
-  var teamName = request.payload.teamName
-  if(!teams[teamName])
-    teams[teamName] = {score: 0}
+  //TODO: Check teamname not already taken
+  var token = uuid.v4();
+  var teamName = request.payload.teamName;
+
+  teams[token] = {name: teamName, score: 0}
 
   reply({
-    id: "1234",
+    token: token,
     teamName: teamName
   })
 }
@@ -53,6 +56,14 @@ server.route({
   path: "/teams",
   handler: function(request, reply) {
     reply(teams)
+  }
+});
+
+server.route({
+  method: 'GET',
+  path: '/team',
+  handler: function(request, reply) {
+    reply(teams[0])
   }
 });
 
