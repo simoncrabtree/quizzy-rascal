@@ -31,7 +31,7 @@ describe('team', () => {
     }, {
       type: LOGIN_SUCCESS,
       response: {
-        id: 'token-123',
+        token: 'token-123',
         teamName: 'Test Team 1'
       }
     }])
