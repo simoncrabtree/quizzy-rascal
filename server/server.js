@@ -7,6 +7,7 @@ var port = process.env.port || 1337;
 var uuid = require('node-uuid');
 
 var teams = {}
+var quizmaster = {}
 
 var server = new Hapi.Server();
 server.connection({
@@ -39,6 +40,14 @@ var login = function(request, reply) {
   })
 }
 
+var quizmasterlogin = function(request, reply) {
+  if(request.payload.password !== 'password')
+    return reply(Boom.badRequest)
+
+  quizmaster.token = uuid.v4()
+  return reply({token: quizmaster.token})
+}
+
 server.route({
 	method: "GET",
 	path: "/{path*}",
@@ -61,6 +70,12 @@ server.route({
 	method: 'POST',
 	path: "/login",
 	handler: login
+});
+
+server.route({
+  method: 'POST',
+  path: "/quizmasterlogin",
+  handler: quizmasterlogin
 });
 
 server.route({
@@ -89,6 +104,4 @@ server.start(function (err) {
 		console.log("ERROR starting server:", err);
 
 	console.log("Server listening on port", port);
-
-  
 });

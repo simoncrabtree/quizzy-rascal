@@ -1,0 +1,91 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: @page-background;
+}
+
+#root {
+  height: 100%;
+}
+
+.container {
+  margin-left: 0px;
+}
+
+.avoid-navbar {
+  padding-top: 50px;
+  height: 100%;
+}
+
+.navbar {
+
+  li.last-nav {
+    margin-right: 200px;
+  }
+
+  span.api-version {
+    font-size: 150%;
+    background-color: @page-background;
+    color: @text-primary;
+    margin-right: 20px;
+    padding: 10px 15px;
+    display: block;
+  }
+}
+
+.logged-in-app {
+  height: 100%;
+}
+
+td.heading {
+  padding-right: 30px;
+}
+
+.page-title {
+  color: @text-primary;
+  font-size: 48px;
+  z-index: -1;
+  margin: 40px 0 30px 0;
+}
+
+.glyphicon.spinning {
+  animation: spin 1s infinite linear;
+  -webkit-animation: spin2 1s infinite linear;
+}
+
+.loading-spinner {
+  margin: 180px auto;
+  text-align: center;
+  display: block;
+  font-size: 1500%;
+  color: @light-grey;
+
+  .spinning {
+    animation: spin 2s infinite linear;
+    -webkit-animation: spin2 2s infinite linear;
+  }
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+tr.active-false td {
+  color: #a1a1a1;
+  a {
+    color: #a1a1a1;
+  }
+}
+
+.inset {
+  background-color: #fff;
+  padding: 16px;
+  margin-bottom: 24px;
+}
