@@ -3,6 +3,7 @@ import selector from './mainPage'
 
 describe('main page', () => {
   const mainPage = selector({
+  	question: {current: {question: {}}},
     team: {
       name: 'My Team'
     }

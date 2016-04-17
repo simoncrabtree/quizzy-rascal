@@ -9,6 +9,7 @@ export const CHANGE_TEAM_NAME = 'CHANGE_TEAM_NAME'
 export const FETCH_TEAM_REQUEST = 'FETCH_TEAM_REQUEST'
 export const FETCH_TEAM_SUCCESS = 'FETCH_TEAM_SUCCESS'
 export const FETCH_TEAM_FAILURE = 'FETCH_TEAM_FAILURE'
+export const NEW_QUESTION = 'NEW_QUESTION'
 
 export const appInit = () => ({
   type: APP_INIT
