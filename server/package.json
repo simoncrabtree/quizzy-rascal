@@ -1,8 +1,9 @@
 {
-  "name": "Quizzy Rascal Server",
+  "name": "quizzy-rascal-server",
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
+    "boom": "^3.1.2",
     "hapi": "13.3.0",
     "inert": "^3.2.0",
     "nes": "^4.3.0",

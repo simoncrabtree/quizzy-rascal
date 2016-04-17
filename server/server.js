@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var Boom = require('boom')
 var Inert = require('inert')
 var Nes = require('nes');
 var config = require('./package.json');
@@ -74,7 +75,12 @@ server.route({
   method: 'GET',
   path: '/team',
   handler: function(request, reply) {
-    reply(teams[request.headers.teamtoken])
+    var teamToken = request.headers.teamtoken
+
+    if(teams[teamToken])
+      return reply(teams[teamToken])
+
+    return reply(Boom.notFound())
   }
 });
 

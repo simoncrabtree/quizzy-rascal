@@ -5,7 +5,8 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   FETCH_TEAM_REQUEST,
-  FETCH_TEAM_SUCCESS
+  FETCH_TEAM_SUCCESS,
+  FETCH_TEAM_FAILURE
 } from '../actions'
 
 describe('team', () => {
@@ -72,6 +73,16 @@ describe('team', () => {
 
     it('sets the team name', () => {
       expect(state.name).to.equal('My Team Name')  
+    })
+  })
+
+  describe('fetch team fails', () => {
+    const state = reducerReduce(team, [{
+      type: FETCH_TEAM_FAILURE
+    }])
+
+    it('logs the team out so they must log in again', () => {
+      expect(state.token).to.equal(null)
     })
   })
 })
