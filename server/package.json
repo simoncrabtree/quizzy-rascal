@@ -1,20 +1,7 @@
 {
-  "name": "LaserformHubAdminServer",
+  "name": "Quizzy Rascal Server",
   "version": "1.0.0",
-  "description": "Laserform Hub Internal Admin Application",
   "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AdvancedLegal/LaserformHubAdmin.git"
-  },
-  "license": "Copyright Advanced Computer Software",
-  "bugs": {
-    "url": "https://github.com/AdvancedLegal/LaserformHubAdmin/issues"
-  },
-  "homepage": "https://github.com/AdvancedLegal/LaserformHubAdmin",
-  "engines": {
-    "node": "4.2.3"
-  },
   "dependencies": {
     "hapi": "13.3.0",
     "inert": "^3.2.0",
